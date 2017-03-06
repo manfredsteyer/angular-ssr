@@ -1,0 +1,61 @@
+<h1>Search Flights</h1>
+
+<form #f="ngForm" novalidate flightRoundTrip>
+
+    <div>
+        Env: {{env}}
+    </div>
+
+    <div *ngIf="f?.control?.hasError('round-trip')">
+        Round trips arn't allowed.
+    </div>
+
+    <div class="form-group">
+        <label>From</label>
+        <input class="form-control"
+               [(ngModel)]="from"
+               name="from">
+    </div>
+
+    <div class="form-group">
+        <label>To</label>
+        <input class="form-control" [(ngModel)]="to" name="to" flightE2eLocator="to">
+    </div>
+
+    <div class="form-group">
+        <button
+            class="btn btn-primary"
+            name="btnSearch"
+            [disabled]="!f.valid"
+            (click)="search()">Search
+        </button>
+      <button
+        class="btn btn-primary"
+        name="btnSearch"
+        [disabled]="!f.valid"
+        (click)="delay()">Delay
+      </button>
+    </div>
+
+</form>
+
+<div class="row">
+    <div *ngFor="let f of flights" class="col-sm-6 col-md-4 col-lg-3 ">
+        <flight-card [item]="f"
+                     [(selectedItem)]="selectedFlight">
+
+            <a class="btn btn-default"
+               [routerLink]="['../flight-edit', f.id]">Edit</a>
+
+        </flight-card>
+
+    </div>
+</div>
+
+
+<div class="row" style="margin-top:40px">
+<pre>Your Flight
+----------------------
+{{selectedFlight | json}}
+</pre>
+</div>

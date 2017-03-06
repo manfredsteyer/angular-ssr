@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Daniela",
+        "lastName": "Konheim",
+        "id" : 4123
+    },
+    {
+        "name": "Christa",
+        "lastName": "Maisano",
+        "id" : 4245
+    },
+    {
+        "name": "Andreas",
+        "lastName": "Lang",
+        "id" : 5479
+    },
+    {
+        "name": "Max",
+        "lastName": "Muster",
+        "id" : 5290
+    },
+    {
+        "name": "Klara",
+        "lastName": "Spinrad",
+        "id" : 1229
+    },
+    {
+        "name": "Stefan",
+        "lastName": "Frias",
+        "id" : 6647
+    }
+]

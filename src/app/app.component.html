@@ -1,0 +1,29 @@
+<nav class="navbar navbar-default">
+    <ul class="nav navbar-nav">
+        <li routerLinkActive="active"><a [routerLink]="['/home', {showDetail:false}]">Home</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/flight-booking']">Book a flight</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['/passenger']">Passenger</a></li>
+        <li><a [routerLink]="[{outlets: { aux: ['history', {showDetail: true}] }}]">Show History</a></li>
+        <li><a [routerLink]="[{outlets: { aux: null }}]">Hide History</a></li>
+
+    </ul>
+</nav>
+
+<div class="container">
+
+    <div class="row">
+        <router-outlet></router-outlet>
+    </div>
+
+    <div class="row">
+        <router-outlet name="aux"></router-outlet>
+    </div>
+
+</div>
+
+<div class="loading-indicator" *ngIf="showWaitInfo">
+    <div class="spinner">
+        <div class="double-bounce1"></div>
+        <div class="double-bounce2"></div>
+    </div>
+</div>

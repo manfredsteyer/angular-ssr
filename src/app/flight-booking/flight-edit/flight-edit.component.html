@@ -1,0 +1,52 @@
+<h1>Edit Flight</h1>
+
+<div *ngIf="exitWarning.show" class="alert alert-warning" style="position: fixed; top:20px; width:400px; z-index:10">
+    <div>
+      Do you really want to leave?
+    </div>
+    <div>
+        <a href="javascript:void(0)" (click)="decide(true)" class="btn btn-danger">Sure</a>
+        <a href="javascript:void(0)" (click)="decide(false)" class="btn btn-default">Nope</a>
+    </div>
+</div>
+
+<!--
+<div *ngIf="flight">
+-->
+<div *ngIf="message">
+    {{message}}
+</div>
+
+<div class="form-group">
+    <label>Id</label>
+    <input class="form-control" [(ngModel)]="flight.id">
+</div>
+<div class="form-group">
+    <label>From</label>
+    <input class="form-control" [(ngModel)]="flight.from">
+</div>
+<div class="form-group">
+    <label>To</label>
+    <input class="form-control" [(ngModel)]="flight.to">
+</div>
+<div class="form-group">
+    <label>Datum</label>
+    <input class="form-control" [(ngModel)]="flight.date">
+</div>
+<div class="form-group">
+    <button class="btn btn-primary" (click)="save()">Save</button>
+    <button flightTooltip2="This action is irreversible!" (flightClickWithWarning)="remove()">Remove</button>
+    <ng-template #tooltip>
+        <flight-tooltip>
+            This action is irreversible.
+        </flight-tooltip>
+        <!--
+        <div>
+            This action is irreversible.
+        </div>
+        -->
+    </ng-template>
+</div>
+<!--
+</div>
+-->

@@ -1,0 +1,10 @@
+<div class="col-sm-3">
+    <ul class="nav nav-pills nav-stacked" style="margin-top:20px;">
+        <li routerLinkActive="active"><a [routerLink]="['./passenger-search']">Search Passengers</a></li>
+        <li routerLinkActive="active"><a [routerLink]="['./passenger-edit', 0]">Add Passenger</a></li>
+    </ul>
+</div>
+
+<div class="col-md-9">
+    <router-outlet></router-outlet>
+</div>

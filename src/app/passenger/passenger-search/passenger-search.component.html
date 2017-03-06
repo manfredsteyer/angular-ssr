@@ -1,0 +1,41 @@
+<h1>Search Passengers</h1>
+
+<form #f="ngForm" novalidate passengerRoundTrip>
+
+    <div class="form-group">
+        <label>Name</label>
+        <input class="form-control"
+               [(ngModel)]="name"
+               name="name">
+    </div>
+
+    <div class="form-group">
+        <button
+            class="btn btn-primary"
+            name="btnSearch"
+            [disabled]="!f.valid"
+            (click)="search()">Search
+        </button>
+    </div>
+
+</form>
+
+<div class="row">
+    <div *ngFor="let f of passengers" class="col-sm-6 col-md-4 col-lg-3 ">
+        <passenger-card [item]="f"
+                     [(selectedItem)]="selectedPassenger">
+
+            <a class="btn btn-default"
+               [routerLink]="['../passenger-edit', f.id]">Edit</a>
+
+        </passenger-card>
+
+    </div>
+</div>
+
+<div class="row" style="margin-top:40px">
+<pre>Your Passenger
+----------------------
+{{selectedPassenger | json}}
+</pre>
+</div>

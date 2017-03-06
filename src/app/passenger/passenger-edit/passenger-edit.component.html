@@ -1,0 +1,35 @@
+<h1>Edit Passenger</h1>
+
+<div *ngIf="exitWarning.show" class="alert alert-warning" style="position: fixed; top:20px; width:400px; z-index:10">
+    <div>
+      Do you really want to leave?
+    </div>
+    <div>
+        <a href="javascript:void(0)" (click)="decide(true)" class="btn btn-danger">Sure</a>
+        <a href="javascript:void(0)" (click)="decide(false)" class="btn btn-default">Nope</a>
+    </div>
+</div>
+
+<div *ngIf="message">
+    {{message}}
+</div>
+
+<div class="form-group">
+    <label>Id</label>
+    <input class="form-control" [(ngModel)]="passenger.id">
+</div>
+<div class="form-group">
+    <label>First Name</label>
+    <input class="form-control" [(ngModel)]="passenger.firstName">
+</div>
+<div class="form-group">
+    <label>Name</label>
+    <input class="form-control" [(ngModel)]="passenger.name">
+</div>
+<div class="form-group">
+    <label>Bonus Miles</label>
+    <input class="form-control" [(ngModel)]="passenger.bonusMiles">
+</div>
+<div class="form-group">
+    <button class="btn btn-primary" (click)="save()">Save</button>
+</div>
